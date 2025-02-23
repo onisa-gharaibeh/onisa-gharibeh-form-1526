@@ -1,0 +1,167 @@
+/* 
+Font-stack:
+Arial, Helvetica, Helvetica Neue, sans-serif
+
+Font-size for entire web-page excluding <legend> tag is 1rem. Font-size for <legend> is 2rem.
+
+Colors
+#DDD
+#F5F5F5
+#6495ED
+*/
+
+/*  ---------------------------
+    Smart-phone - up to 25rem
+    --------------------------- */
+
+/* VARIABLES */
+:root {
+    --bor: #DDD;
+    --bg: #F5F5F5;
+    --yel: #fcf4d4;
+    --bl: #6495ED;
+    --fnt: Arial, Helvetica, HelveticaNeue, sans-serif;
+    --siz: 1rem;
+}
+
+/* Defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: var(--fnt);
+    font-size: 1rem;
+}
+
+.wrapper {
+    max-width: 85vw;
+    margin: auto;
+}
+
+fieldset {
+    /* VISIUAL */
+    background-color: var(--bg);
+    padding: 1em;
+    border: .1em solid var(--bor);
+    border-radius: .3em;
+
+    /* FLEX */
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    /* POSITION */
+    margin-top: 4em;
+}
+
+
+legend {
+    font-size: 2rem;
+    background-color: white;
+    border: .05em solid var(--bor);
+    padding: .7em;
+
+    /* POSITION */
+    max-width: max-content;
+}
+
+
+label {
+    display: block;
+    margin-bottom: .5em;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: .1em solid var(--bor);
+    min-height: 3em;
+    border-radius: .3em;
+}
+
+input:active,
+textarea:active,
+input:focus,
+textarea:focus {
+    background-color: var(--yel);
+}
+
+#message {
+    height: 5em;
+}
+
+#submit {
+    color: var(--bg);
+    background-color: var(--bl);
+}
+
+#submit:hover {
+    color: var(--bl);
+    background-color: var(--yel);
+}
+
+#submit:active,
+#submit:focus {
+    color: black;
+    background-color: var(--yel);
+    border: .1em solid var(--bl);
+}
+
+/* 
+Tablet - between 25rem and 40rem
+*/
+@media only screen and (min-width: 25rem) and (max-width: 40rem) {
+
+    .wrapper {
+        max-width: 90vw;
+        margin: auto;
+    }
+
+    fieldset {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .grp {
+        flex-basis: 100%;
+    }
+
+    .half {
+        flex: 1;
+    }
+
+    #submit {
+        width: 25%;
+    }
+
+}
+
+
+/* 
+Desktop - Bigger than 40rem
+*/
+@media only screen and (min-width: 40rem) {
+    .wrapper {
+        max-width: 50rem;
+        margin: auto;
+    }
+
+    fieldset {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .grp {
+        flex-basis: 100%;
+    }
+
+    .half {
+        flex: 1;
+    }
+
+    #submit {
+        width: 20%;
+    }
+}
